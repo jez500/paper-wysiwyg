@@ -1,0 +1,145 @@
+
+.ProseMirror {
+    table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 100%;
+        margin: 0 0 1.5rem;
+
+        td, th {
+            min-width: 1em;
+            border: 1px solid var(--paper-wysiwyg-table-border-color, #{$paper-wysiwyg-table-border-color});
+            padding: 3px 5px;
+            vertical-align: top;
+            box-sizing: border-box;
+            position: relative;
+            text-align: left;
+
+            > p {
+                margin: 0.25rem 0;
+            }
+        }
+
+        th {
+            background: var(--paper-wysiwyg-table-th-bg, #{$paper-wysiwyg-table-th-bg});
+        }
+
+        .selectedCell {
+            &:after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 2;
+                content: "";
+                pointer-events: none;
+                background: rgba(200, 200, 255, 0.4);
+            }
+        }
+
+        .column-resize-handle {
+            position: absolute;
+            right: -2px;
+            top: 0;
+            bottom: -2px;
+            width: 4px;
+            background-color: #adf;
+            pointer-events: none;
+        }
+    }
+
+    .tableWrapper {
+        padding: 1em 0 0;
+
+        ::selection {
+            color: inherit;
+        }
+    }
+
+    &.resize-cursor {
+        cursor: ew-resize;
+        cursor: col-resize;
+    }
+
+
+    .grip-column {
+        /* usage of ::after for all of the table grips works around a bug in
+         * prosemirror-tables that causes Safari to hang when selecting a cell
+         * in an empty table:
+         * https://github.com/ProseMirror/prosemirror/issues/947 */
+        &::after {
+            content: "";
+            cursor: pointer;
+            position: absolute;
+            top: -16px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: var(--paper-wysiwyg-table-grip-color, #{$paper-wysiwyg-table-grip-color});
+            display: block;
+        }
+
+        &:hover::after {
+            background: var(--paper-wysiwyg-table-grip-color-selected, #{$paper-wysiwyg-table-grip-color-selected});
+        }
+        &.first::after {
+            border-top-left-radius: 3px;
+        }
+        &.last::after {
+            border-top-right-radius: 3px;
+        }
+        &.selected::after {
+            background: var(--paper-wysiwyg-table-grip-color-selected, #{$paper-wysiwyg-table-grip-color-selected});
+        }
+    }
+
+    .grip-row {
+        &::after {
+            content: "";
+            cursor: pointer;
+            position: absolute;
+            left: -16px;
+            top: 0;
+            height: 100%;
+            width: 12px;
+            background: var(--paper-wysiwyg-table-grip-color, #{$paper-wysiwyg-table-grip-color});
+            display: block;
+        }
+
+        &:hover::after {
+            background: var(--paper-wysiwyg-table-grip-color-selected, #{$paper-wysiwyg-table-grip-color-selected});
+        }
+        &.first::after {
+            border-top-left-radius: 3px;
+        }
+        &.last::after {
+            border-bottom-left-radius: 3px;
+        }
+        &.selected::after {
+            background: var(--paper-wysiwyg-table-grip-color-selected, #{$paper-wysiwyg-table-grip-color-selected});
+        }
+    }
+
+    .grip-table {
+        &::after {
+            content: "";
+            cursor: pointer;
+            background: var(--paper-wysiwyg-table-grip-color, #{$paper-wysiwyg-table-grip-color});
+            width: 13px;
+            height: 13px;
+            border-radius: 13px;
+            position: absolute;
+            top: -16px;
+            left: -16px;
+            display: block
+        }
+
+        &:hover::after {
+            background: var(--paper-wysiwyg-table-grip-color-selected, #{$paper-wysiwyg-table-grip-color-selected});
+        }
+        &.selected::after {
+            background: var(--paper-wysiwyg-table-grip-color-selected, #{$paper-wysiwyg-table-grip-color-selected});
+        }
+    }
+}

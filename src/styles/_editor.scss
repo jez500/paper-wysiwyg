@@ -1,0 +1,46 @@
+
+.paper-wysiwyg {
+    border: 1px solid var(---paper-wysiwyg-border-color, #{$paper-wysiwyg-color-dark-bg-border});
+
+    &__editor {
+        padding: var(---paper-wysiwyg-gutter, 1rem);
+        padding-left: var(--paper-wysiwyg-icon-size, #{$paper-wysiwyg-icon-size});
+
+        .ProseMirror {
+            min-height: var(--paper-wysiwyg-height, 300px);
+
+            &:focus {
+                outline: none;
+            }
+
+            > *:first-child {
+                margin-top: 0;
+            }
+
+            p.is-empty {
+                margin-top: 0;
+
+                &::before {
+                    content: attr(data-placeholder);
+                    float: left;
+                    color: var(--paper-wysiwyg-placehlder-color, #7d7f81);
+                    pointer-events: none;
+                    height: 0;
+                }
+            }
+
+
+            .block-menu-trigger {
+                all: unset;
+                appearance: none;
+                position: absolute;
+                left: -24px;
+                width: var(--paper-wysiwyg-icon-size, #{$paper-wysiwyg-icon-size});
+                line-height: var(--paper-wysiwyg-icon-size, #{$paper-wysiwyg-icon-size});
+                text-align: center;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+}
