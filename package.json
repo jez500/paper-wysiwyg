@@ -1,7 +1,7 @@
 {
   "name": "@dvwd/paper-wysiwyg",
   "description": "A minimalistic yet powerful VueJs WYSIWYG built on Tiptap 2, inspired by Outline Wiki",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Jeremy graham <mail@jez500.com>",
   "license": "MIT",
   "main": "dist/paper-wysiwyg.udm.js",
