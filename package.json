@@ -1,10 +1,19 @@
 {
   "name": "@dvwd/paper-wysiwyg",
   "description": "A minimalistic yet powerful VueJs WYSIWYG built on Tiptap 2, inspired by Outline Wiki",
-  "version": "1.0.0",
-  "main": "dist/my-component.umd.js",
-  "module": "dist/my-component.esm.js",
-  "unpkg": "dist/my-component.min.js",
+  "version": "1.0.2",
+  "author": "Jeremy graham <mail@jez500.com>",
+  "license": "MIT",
+  "main": "dist/paper-wysiwyg.udm.js",
+  "module": "dist/paper-wysiwyg.esm.js",
+  "unpkg": "dist/paper-wysiwyg.min.js",
+  "browser": {
+    "./sfc": "src/PaperWysiwyg.vue"
+  },
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
   "scripts": {
     "rollup": "./node_modules/rollup/dist/bin/rollup",
     "build": "./node_modules/rollup/dist/bin/rollup -c --environment INCLUDE_DEPS,BUILD:production",

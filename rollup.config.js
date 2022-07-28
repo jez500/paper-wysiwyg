@@ -69,11 +69,17 @@ export default [
   // Scripts.
   {
     ...bundleJsByFormat('umd', 'paper-wysiwyg.umd.js'),
-    plugins: bundleJsByFormatPlugins()
+    plugins: [
+      ...bundleJsByFormatPlugins(),
+      terser()
+    ]
   },
   {
     ...bundleJsByFormat('es', 'paper-wysiwyg.esm.js'),
-    plugins: bundleJsByFormatPlugins()
+    plugins: [
+      ...bundleJsByFormatPlugins(),
+      terser()
+    ]
   },
   {
     ...bundleJsByFormat('iife', 'paper-wysiwyg.min.js'),
