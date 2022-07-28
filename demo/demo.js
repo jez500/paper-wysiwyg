@@ -7,6 +7,6 @@ Vue.component('paper-wysiwyg', PaperWysiwyg)
 new Vue({
   el: '#app',
   data: {
-    content: '<p>Hello world</p>'
+    content: '<h3>This is Paper Wysiwyg 🧾✏️</h3><p>Select text to change formatting, or click below then <strong>+</strong> to add something</p><p></p>'
   }
 })

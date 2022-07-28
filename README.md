@@ -9,6 +9,11 @@ and inspired by [Outline wiki](https://www.getoutline.com/)
 npm install @jez500/paper-wysiwyg
 ```
 
+## Dependencies
+
+* VueJS 2.X 
+* Axios (for image uploads) `@todo make optional`
+
 ## Usage
 
 ### In a component.
@@ -48,6 +53,46 @@ If node is not installed but docker is, just use the helper scripts to run npm.
 
 #### Build demo
 ```bash
-./node-docker.sh npm run build \
-  && ./node-docker.sh npm run build:demo
+./node-docker.sh npm run build && ./node-docker.sh npm run build:demo
+```
+
+## Image uploads
+
+To enable uploads, you just have to add a `upload-url` prop. Eg
+
+```javascript
+   <paper-wysiwyg upload-url="/post/backend/route"></paper-wysiwyg>
+```
+
+The upload route should return JSON array of saved file paths. 
+
+### Once uploading is enabled, you can
+
+* Drag and drop an image
+* Paste an image from the clipboard
+* Click **+** and browse for an image
+
+### Example of a basic laravel backend route
+
+```php
+<?php
+Route::post('/upload/image', function(Request $request) {
+    $files = [];
+    
+    if ($request->hasFile('images')) {
+        $uploadedFiles = $request->file('images');
+      
+        foreach ($uploadedFiles as $file) {
+            if (! $file->isValid()) {
+              continue;
+            }
+            
+            $name = uniqid().'_'.trim($file->getClientOriginalName());           
+            $file->move(Storage::path('public/'.$path), $name);            
+            $files[] = Storage::url($path.'/'.$name);
+        }
+    }
+    
+    return $files;
+});
 ```

@@ -2,28 +2,15 @@
 <head>
   <title>Paper Wysiwyg</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 0;
-      margin: 0;
-      font-size: 16px;
-      color: #444;
-    }
-    #app {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-    h1 {
-      padding: 1rem;
-      background: #eee;
-      font-size: 1.5em;
-    }
-  </style>
+  <link rel="stylesheet" href="demo.css" />
 </head>
 <body>
-  <h1>Paper Wysiwyg demo</h1>
+  <header>
+    <h1>Paper Wysiwyg demo</h1>
+    <nav>
+      <a href="https://github.com/jez500/paper-wysiwyg">Github</a>
+    </nav>
+  </header>
   <div id="app">
     <paper-wysiwyg v-model="content"></paper-wysiwyg>
   </div>

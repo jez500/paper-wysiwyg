@@ -1,4 +1,11 @@
 
+%code {
+    background-color: var(--paper-wysiwyg-code-bg, #{$paper-wysiwyg-code-bg});
+    color: var(--paper-wysiwyg-code-fg, #{$paper-wysiwyg-code-fg});
+    font-family: var(--paper-wysiwyg-code-font, #{$paper-wysiwyg-code-font});
+    border: 1px solid var(--paper-wysiwyg-code-border-color, #{$paper-wysiwyg-code-border-color});
+}
+
 .paper-wysiwyg {
     blockquote {
         background-color: rgba(black, 0.1);
@@ -8,11 +15,10 @@
     }
 
     code {
-        background-color: rgba(black, .3);
-        border: 1px solid rgba(black, .5);
-        padding: 4px 6px;
+        @extend %code;
+        padding: 3px 6px;
         display: inline-block;
         border-radius: 3px;
-        color: #ccc;
+        font-size: .9em;
     }
 }

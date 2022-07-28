@@ -19,6 +19,7 @@
 
             p.is-empty {
                 margin-top: 0;
+                padding-top: 3px;
 
                 &::before {
                     content: attr(data-placeholder);
@@ -29,16 +30,15 @@
                 }
             }
 
-
             .block-menu-trigger {
                 all: unset;
                 appearance: none;
                 position: absolute;
-                left: -24px;
+                left: -26px;
                 width: var(--paper-wysiwyg-icon-size, #{$paper-wysiwyg-icon-size});
                 line-height: var(--paper-wysiwyg-icon-size, #{$paper-wysiwyg-icon-size});
                 text-align: center;
-                font-size: 20px;
+                font-size: 26px;
                 cursor: pointer;
             }
         }
