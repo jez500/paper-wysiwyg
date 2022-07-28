@@ -3,6 +3,10 @@
 A minimalistic yet powerful [VueJS 2](https://vuejs.org/) WYSIWYG, built on [TipTap 2](https://tiptap.dev/) 
 and inspired by [Outline wiki](https://www.getoutline.com/)
 
+## Demo
+
+[See Paper WYSIWYG in action](https://jez500.github.io/paper-wysiwyg/)
+
 ## Install
 
 ```bash
@@ -35,25 +39,29 @@ npm install @dvwd/paper-wysiwyg
 </script>
 ```
 
-## Building
+## Styling
 
-### Docker
-
-If node is not installed but docker is, just use the helper scripts to run npm.
-
-#### Install dependencies
-```bash
-./node-docker.sh npm install
+### Import the CSS
+```scss
+@import '@dvwd/paper-wysiwyg/dist/styles.css';
 ```
 
-#### Build package (dist)
-```bash
-./node-docker.sh npm run build
+#### Overriding styles
+
+Most colours and styles you may want to change are CSS variables, have a look through [src/styles](src/styles),
+specifically `_settings.scss`.
+
+Eg. Change the bubble menu background:
+
+```css
+::root {
+  --paper-wysiwyg-color-bubble-bg: #000;
+}
 ```
 
-#### Build demo
-```bash
-./node-docker.sh npm run build && ./node-docker.sh npm run build:demo
+### Alternatively import the SCSS
+```scss
+@import '../node_modules/@dvwd/paper-wysiwyg/src/styles/all';
 ```
 
 ## Image uploads
@@ -95,6 +103,28 @@ Route::post('/upload/image', function(Request $request) {
     
     return $files;
 });
+```
+
+## Building
+
+### Docker
+
+If node is not installed but docker is, just use the helper scripts to run npm. If node is installed,
+just remove `./node-docker.sh` from below commands.
+
+#### Install dependencies
+```bash
+./node-docker.sh npm install
+```
+
+#### Build package (dist)
+```bash
+./node-docker.sh npm run build
+```
+
+#### Build demo
+```bash
+./node-docker.sh npm run build && ./node-docker.sh npm run build:demo
 ```
 
 ## Who made this happen
