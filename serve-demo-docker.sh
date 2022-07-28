@@ -9,4 +9,4 @@ fi
 
 echo "Exposing on port $PORT. Add a port number after this command to use something different"
 
-docker run -d --rm -p "$PORT":80 -v "$PWD"/demo:/usr/share/nginx/html -w /app nginx:"$NGINX_TAG"
+docker run -d --rm -p "$PORT":80 -v "$PWD":/usr/share/nginx/html -w /app nginx:"$NGINX_TAG"
