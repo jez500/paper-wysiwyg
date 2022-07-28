@@ -6,7 +6,7 @@ and inspired by [Outline wiki](https://www.getoutline.com/)
 ## Install
 
 ```bash
-npm install @jez500/paper-wysiwyg
+npm install @dvwd/paper-wysiwyg
 ```
 
 ## Dependencies
@@ -22,7 +22,7 @@ npm install @jez500/paper-wysiwyg
   <paper-wysiwyg v-model="content"></paper-wysiwyg>
 </template>
 <script>
-  import PaperWysiwyg from "@jez500/paper-wysiwyg"
+  import PaperWysiwyg from "@dvwd/paper-wysiwyg"
 
   export default {
     components: { PaperWysiwyg },

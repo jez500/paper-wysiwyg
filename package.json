@@ -1,6 +1,6 @@
 {
-  "name": "@jez500/paper-wysiwyg",
-  "description": "A minimalistic yet powerful WYSIWYG, built on TipTap and inspired by Outline wiki",
+  "name": "@dvwd/paper-wysiwyg",
+  "description": "A minimalistic yet powerful VueJs WYSIWYG built on Tiptap 2, inspired by Outline Wiki",
   "version": "1.0.0",
   "main": "dist/my-component.umd.js",
   "module": "dist/my-component.esm.js",
@@ -64,5 +64,9 @@
     "tiptap-text-direction-extension": "^1.0.2",
     "vue-mutation-observer": "^0.1.2",
     "vue-template-compiler": "^2.6.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jez500/paper-wysiwyg.git"
   }
 }
