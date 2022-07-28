@@ -13,12 +13,14 @@ body {
 }
 
 header {
-  padding: 1rem;
-  background: #eee;
+  padding: 1rem 2rem;
+  background: #333;
   margin: 0 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #eee;
+  border-bottom: 2px solid #111;
 }
 
 h1 {
@@ -34,7 +36,15 @@ nav a {
   margin-left: 2rem;
   text-decoration: none;
   font-weight: bold;
-  color: #444;
+  color: #eee;
+  display: inline-flex;
+  align-items: center;
+}
+
+nav a img {
+  height: 17px;
+  width: 17px;
+  margin-right: .5rem;
 }
 
 nav a:hover {
