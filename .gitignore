@@ -1,5 +1,7 @@
 .idea
 /dist
 /demo/demo_bundle.js
+/demo/styles.js
+/demo/styles.css
 /public
 /node_modules

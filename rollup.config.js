@@ -8,7 +8,6 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import globals from 'rollup-plugin-node-globals';
 import { terser } from "rollup-plugin-terser";
 import babel from 'rollup-plugin-babel';
-import css from "rollup-plugin-css-only";
 import buble from '@rollup/plugin-buble'
 
 const bundleJsByFormat = (format = 'esm', filename = 'paper-wysiwyg.js') => {

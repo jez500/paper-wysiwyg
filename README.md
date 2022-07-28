@@ -1,6 +1,13 @@
 # Paper Wysiwyg
 
-A minimalistic yet powerful WYSIWYG, built on TipTap and inspired by Outline wiki
+A minimalistic yet powerful [VueJS 2](https://vuejs.org/) WYSIWYG, built on [TipTap 2](https://tiptap.dev/) 
+and inspired by [Outline wiki](https://www.getoutline.com/)
+
+## Install
+
+```bash
+npm install @jez500/paper-wysiwyg
+```
 
 ## Usage
 
@@ -29,6 +36,11 @@ A minimalistic yet powerful WYSIWYG, built on TipTap and inspired by Outline wik
 
 If node is not installed but docker is, just use the helper scripts to run npm.
 
+#### Install dependencies
+```bash
+./node-docker.sh npm install
+```
+
 #### Build package (dist)
 ```bash
 ./node-docker.sh npm run build
@@ -36,5 +48,6 @@ If node is not installed but docker is, just use the helper scripts to run npm.
 
 #### Build demo
 ```bash
-./node-docker.sh npm run build:demo
+./node-docker.sh npm run build \
+  && ./node-docker.sh npm run build:demo
 ```
