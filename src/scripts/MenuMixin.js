@@ -23,7 +23,7 @@ export default {
                     {name: 'blockquote', icon: 'quote', label: 'Quote', method: 'toggleBlockquote', key: '>'},
                     {name: 'divider', icon: 'divider', label: 'Divider', method: 'setHorizontalRule', key: '---'},
                     {name: 'link', icon: 'link', label: 'Link', callback: 'setLink', key: '---'},
-                    {name: 'image', icon: 'image', label: 'Image', callback: 'addImage', key: ''},
+                    {name: 'image', icon: 'image', label: 'Image', callback: 'addImage', key: '', visibility: this.canUpload},
                     {name: 'table', icon: 'table', label: 'Table', method: 'insertTable', args: {rows: 3, cols: 3, withHeaderRow: true}, key: ''},
                 ],
                 inline: [
@@ -67,6 +67,14 @@ export default {
             }
         },
         /**
+         * Can upload an image.
+         *
+         * @returns {boolean}
+         */
+        canUpload() {
+            return !! this.editor.options.editorProps.uploadUrl
+        },
+        /**
          * Generic upload wrapper.
          */
         upload() {
@@ -98,6 +106,16 @@ export default {
         getSelectionRange(editor) {
             const ranges = editor.view.state?.selection?.ranges;
             return ranges ? {from: ranges[0].$from.pos, to: ranges[0].$to.pos} : {from: 1, to: 1}
+        },
+        /**
+         * Is a given menu link visible.
+         *
+         * @param item
+         * @returns {boolean|*}
+         */
+        itemVisible(item) {
+            if (typeof item.visibility === 'function') return item.visibility()
+            return item.visibility !== false;
         }
     }
 }

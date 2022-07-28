@@ -9,6 +9,7 @@
         <ul>
             <paper-wysiwyg-block-menu-item
                 v-for="blockTypeSetting in sets.heading"
+                v-if="itemVisible(blockTypeSetting)"
                 :key="blockTypeSetting.name + blockTypeSetting.label"
                 :icon="blockTypeSetting.icon"
                 :label="blockTypeSetting.label"
@@ -17,6 +18,7 @@
             <paper-wysiwyg-block-menu-item-divider />
             <paper-wysiwyg-block-menu-item
                 v-for="blockTypeSetting in sets.list"
+                v-if="itemVisible(blockTypeSetting)"
                 :key="blockTypeSetting.name"
                 :icon="blockTypeSetting.icon"
                 :label="blockTypeSetting.label"
@@ -25,6 +27,7 @@
             <paper-wysiwyg-block-menu-item-divider />
             <paper-wysiwyg-block-menu-item
                 v-for="blockTypeSetting in sets.other"
+                v-if="itemVisible(blockTypeSetting)"
                 :key="blockTypeSetting.name"
                 :icon="blockTypeSetting.icon"
                 :label="blockTypeSetting.label"
