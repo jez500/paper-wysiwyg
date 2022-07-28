@@ -61,7 +61,7 @@ If node is not installed but docker is, just use the helper scripts to run npm.
 To enable uploads, you just have to add a `upload-url` prop. Eg
 
 ```javascript
-   <paper-wysiwyg upload-url="/post/backend/route"></paper-wysiwyg>
+   <paper-wysiwyg upload-url="/upload/image"></paper-wysiwyg>
 ```
 
 The upload route should return JSON array of saved file paths. 
@@ -96,3 +96,11 @@ Route::post('/upload/image', function(Request $request) {
     return $files;
 });
 ```
+
+## Who made this happen
+
+* Created by [Jeremy Graham](https://jez.me)
+* Everyone who contributed to [TipTap](https://github.com/ueberdosis/tiptap) and its plugins
+* Authors of [Outline editor](https://github.com/outline/rich-markdown-editor)
+* Table component by [Carl Bradshaw](https://github.com/carldawg)
+* Skills provided by [Doghouse Agency](https://doghouse.agency/) and [District CMS](https://www.districtcms.com/)
